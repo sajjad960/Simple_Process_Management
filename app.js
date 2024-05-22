@@ -6,17 +6,11 @@ const cors = require('cors');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const mongoSanitize = require('express-mongo-sanitize');
-
-
-
 // Routers
 const processRouter = require("./routes/processRoutes");
-
-
 // Errors
 const AppError = require("./utilies/AppError");
 const globalErrorHandler = require("./controllers/errorController");
-const initializeCounter = require("./models/initializeCounter");
 
 app.use(cors({
     credentials: 'include',
@@ -24,8 +18,6 @@ app.use(cors({
 }));
 
 app.use(express.json({ limit: '10kb' }));
-// Initialize Counter For Id Sequence
-// initializeCounter()
 
 app.use((req, res, next) => {
     console.log("hello from middleware");
