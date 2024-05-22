@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 });
 
 // Data sanitization against NoSQL query injection
-// app.use(mongoSanitize());
+app.use(mongoSanitize());
 
 // Data sanitization against XSS
 app.use(xss());

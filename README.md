@@ -1,8 +1,8 @@
 # Overview
 
-Report Management System
+Simple Process Management
 
-- For given task I built this application, implemented user actions services, admin actions services and also genarated refresh token.
+- For given task I built this application, implemented process actions services (process creation, get single and all process and delete process).
 
 ## Technology used
 
@@ -27,94 +27,23 @@ Copy `.env.example` to `.env` and you can also replace `.env` configurations wit
 npm run start
 ```
 
-Now API will available at 6006 port, or other you configured
+Now API will available at 6001 port, or other you configured
 
 4. Seed data.
 
-- for creating admin run this script (you can also add your own credential)
-
-```
-node ./seed/createAdmin.js
-```
-
-after creating admin, must clean the credential from the script 😊.
-
-- for seeding sample report data run this script
-
-```
-node seed/data/import-data.js  --import
-```
+- for this simple application you don't need any seed data.
 
 ## API's
 
 - ✴️ Please import Postman collection and Postman environment for test api through Postman. <br>
 Folder location (seed/postman_data)
 
-* Auth
-
-  - Sign up
-    - POST `/api/v1/users`
-    - request body:
-
-    ```js
-    {
-      "name": "sajjad",
-      "phone": "01650103297",
-      "address": "mahammadpur",
-      "profession": "full stack developer",
-      "favoriteColors": ["black", "blue"],
-      "email": "sajjad@gmail.com",
-      "password": "sajjad5522",
-      "passwordConfirm": "sajjad5522"
-    }
-    ```
-
-  Note: you can also use your credential, by default all register role will be `user`
-
-  - Sign in
-
-    - POST `/api/v1/users`
-    - request body:
-    ```js
-    {
-      "email": "sajjad@gmail.com",
-      "password": "sajjad5522",
-    }
-    ```
-
-    Note: You can also use your credentials.
-
-    - Setup Environment Token: <br>(1) After login , you will get token into response(json), and you can also set it into environment variable (token). <br>(2) For login as a admin, please use admin login credential, and you can also set the token into enviroment variable (admintoken)
-
-  - Genarate Refresh Token
-    - GET `/api/v1/users/refresh-token`
-    - pass `token` as authorization header.
-
-    Note: You can genarate new token with both (expired and non-expired) token.
-
-
-
-* Reports
-  - List of Reports:
-    - GET `/api/v1/reports`
-    - pass `token` as authorization header.
-  - Add new Report:
-    - POST `/api/v1/reports`
-    - pass `admintoken` as authorization header.
-  - Update Report:
-    - PATCH `/api/v1/reports/:id`
-    - pass `admintoken` as authorization header.
-  - Delete Report:
-    - Delete `/api/v1/reports/:id`
-    - pass `admintoken` as authorization header.
-  
-
-
-
-
-
-
-
-
-
-# Simple_Process_Management
+* Process
+  - List of process:
+    - GET `/api/v1/process`
+  - Add new process:
+    - POST `/api/v1/process`
+  - Single process:
+    - GET `/api/v1/process/:processId`
+  - Delete process:
+    - Delete `/api/v1/process/:processId`
