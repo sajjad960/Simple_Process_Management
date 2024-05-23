@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/', processController.getAllProcess)
 router.post('/',processController.createProcess);
-router.route('/:processId').get(processController.getSingleProcess).delete(processController.deleteProcess);
+router.route('/:id').get(processController.getSingleProcess).delete(processController.deleteProcess);
 
 
 

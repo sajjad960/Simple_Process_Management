@@ -25,7 +25,7 @@ exports.createProcess = catchAsync(async (req, res, next) => {
 });
 
 exports.getSingleProcess = catchAsync(async (req, res, next) => {
-  const processId = req.params.processId;
+  const processId = req.params.id;
   // Find the process by pid
   const process = await Process.findOne({ pid: processId });
   if (!process) {
@@ -41,7 +41,7 @@ exports.getSingleProcess = catchAsync(async (req, res, next) => {
 });
 
 exports.deleteProcess = catchAsync(async (req, res, next) => {
-  const processId = req.params.processId;
+  const processId = req.params.id;
 
   // Find the process by pid
   const process = await Process.findOne({ pid: processId });

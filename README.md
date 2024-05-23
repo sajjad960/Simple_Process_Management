@@ -44,6 +44,7 @@ Folder location (seed/postman_data)
   - Add new process:
     - POST `/api/v1/process`
   - Single process:
-    - GET `/api/v1/process/:processId`
+    - GET `/api/v1/process/:id`
+    - pass `id` as a 
   - Delete process:
-    - Delete `/api/v1/process/:processId`
+    - Delete `/api/v1/process/:id`
