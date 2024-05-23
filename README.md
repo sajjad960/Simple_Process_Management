@@ -35,7 +35,7 @@ Now API will available at 6001 port, or other you configured
 
 ## API's
 
-- ✴️ Please import Postman collection and Postman environment for test api through Postman. <br>
+- ✴️ Please import Postman collection for test api through Postman. <br>
 Folder location (seed/postman_data)
 
 * Process
